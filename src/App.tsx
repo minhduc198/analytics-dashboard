@@ -1,7 +1,10 @@
-import { Outlet } from "react-router-dom";
+import { Outlet } from 'react-router-dom'
+import { ThemeProvider } from './theme/theme-provider'
 
 export default function App() {
   return (
-    <div><Outlet/></div>
+    <ThemeProvider defaultTheme="light" storageKey="vite-ui-theme">
+      <Outlet />
+    </ThemeProvider>
   )
 }

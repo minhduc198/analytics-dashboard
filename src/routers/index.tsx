@@ -2,7 +2,11 @@ import App from '@/App'
 import { Layout } from '@/layouts'
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
 import { path } from './path'
-import DashBoard from '@/features/dashboard'
+import ECommerce from '@/features/eCommerce'
+import Analytics from '@/features/analytics'
+import Marketing from '@/features/marketing'
+import TextGenerator from '@/features/textGenerator'
+import Profile from '@/features/profile'
 
 function ProtectedRoute() {
   // const { isAuthenticated } = useContext(AppContext)
@@ -17,7 +21,6 @@ function RejectedRoute() {
   // const { isAuthenticated } = useContext(AppContext)
   const isAuthenticated = true
 
-
   if (isAuthenticated) {
     return <Navigate to={path.home} />
   }
@@ -25,23 +28,24 @@ function RejectedRoute() {
   return <Outlet />
 }
 
-
 export const router = createBrowserRouter([
   {
-    element: <App/>,
+    element: <App />,
     children: [
       {
         path: '/',
-        element: <ProtectedRoute/>,
+        element: <ProtectedRoute />,
         children: [
           {
-            path: path.home,
+            path: path.eCommerce,
             element: <Layout />,
             children: [
-              {path: path.home,
-                element: <DashBoard/>
-              }
-            ]
+              { path: path.profile, element: <Profile /> },
+              { path: path.eCommerce, element: <ECommerce /> },
+              { path: path.analytics, element: <Analytics /> },
+              { path: path.marketing, element: <Marketing /> },
+              { path: path.textGenerator, element: <TextGenerator /> },
+            ],
           },
         ],
       },
@@ -57,11 +61,7 @@ export const router = createBrowserRouter([
         ],
       },
     ],
-
-
   },
-
-
 
   // {
   //   path: '*',
