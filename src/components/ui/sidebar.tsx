@@ -24,7 +24,6 @@ import {
 } from '@/components/ui/tooltip'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
-import { useSidebarControl } from '@/hooks/use-sidebar-control'
 
 const SIDEBAR_COOKIE_NAME = 'sidebar_state'
 const SIDEBAR_COOKIE_MAX_AGE = 60 * 60 * 24 * 7
@@ -165,7 +164,7 @@ function Sidebar({
   collapsible?: 'offcanvas' | 'icon' | 'none'
 }) {
   const { isMobile, state } = useSidebar()
-  const { isPinned } = useSidebarControl()
+  // const { isPinned } = useSidebarControl()
 
   if (collapsible === 'none') {
     return (

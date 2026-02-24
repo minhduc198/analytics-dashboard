@@ -1,7 +1,6 @@
-import React from 'react'
-import ReactApexChart from 'react-apexcharts'
-import type { ApexOptions } from 'apexcharts'
 import type { ISeries } from '@/types'
+import type { ApexOptions } from 'apexcharts'
+import ReactApexChart from 'react-apexcharts'
 
 interface Props {
   series: ISeries[]

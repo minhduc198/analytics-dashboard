@@ -61,7 +61,7 @@ export default function Profile() {
           Profile
         </h3>
 
-        <div className="flex justify-between items-center mb-6 rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800">
+        <div className="flex flex-col xl:flex-row gap-6 xl:gap-0 justify-between items-center mb-6 rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800">
           <div className="flex w-full flex-col items-center gap-6 xl:flex-row">
             <div className="w-[78px] h-[78px] rounded-full overflow-hidden">
               <img
@@ -86,8 +86,8 @@ export default function Profile() {
             </div>
           </div>
 
-          <div className="flex gap-4">
-            <div className="flex gap-2">
+          <div className="w-full flex flex-col justify-end xl:flex-row gap-4">
+            <div className="flex justify-center gap-2">
               <Button variant="icon" size="icon-xl">
                 <Facebook size={20} color="#344054" />
               </Button>
@@ -114,8 +114,8 @@ export default function Profile() {
             </Button>
           </div>
         </div>
-        <div className="mb-6  rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800 ">
-          <div className="flex justify-between items-start">
+        <div className="mb-6 rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800 ">
+          <div className="flex flex-col gap-6 lg:flex-row justify-between items-start">
             <div className="flex flex-col gap-6">
               <div className="text-lg font-semibold text-gray-800 dark:text-white/90">
                 Personal Information
@@ -167,7 +167,7 @@ export default function Profile() {
             <Button
               onClick={handleOpenDialog}
               variant="icon"
-              className="px-4 py-3 h-11 font-semibold"
+              className="px-4 py-3 w-full lg:w-fit h-11 font-semibold"
             >
               <Pencil size={20} color="#344054" />
               Edit
@@ -176,7 +176,7 @@ export default function Profile() {
         </div>
 
         <div className="rounded-2xl border border-gray-200 p-5 lg:p-6 dark:border-gray-800 ">
-          <div className="flex justify-between items-start">
+          <div className="flex flex-col gap-6 lg:flex-row justify-between items-start">
             <div className="flex flex-col gap-6">
               <div className="text-lg font-semibold text-gray-800 dark:text-white/90">
                 Address
@@ -220,7 +220,7 @@ export default function Profile() {
             <Button
               onClick={handleOpenDialogEditAddr}
               variant="icon"
-              className="px-4 py-3 h-11 font-semibold"
+              className="px-4 py-3 w-full lg:w-fit h-11 font-semibold"
             >
               <Pencil size={20} color="#344054" />
               Edit

@@ -86,7 +86,7 @@ export default function Header() {
   return (
     <div
       className={cn(
-        'xl:ml-20 h-[76px] xl:h-[76px] flex xl:flex-row flex-col items-start xl:items-center justify-between border-b fixed inset-0 xl:py-[16px] bg-white dark:bg-background z-90',
+        'xl:ml-20 h-[76px] xl:h-[76px] flex xl:flex-row flex-col items-start xl:items-center justify-between border-b fixed inset-0 xl:py-[16px] bg-white dark:bg-background z-50',
         { 'h-[152px] border-0 ': openMenu },
         {
           'xl:ml-[290px]': isExpanded,

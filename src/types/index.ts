@@ -19,3 +19,9 @@ export interface ISeries {
   name: string
   data: number[]
 }
+
+export interface ColumnHeader<T> {
+  id: keyof T
+  label: string
+  cellRender?: (row: T) => React.ReactNode
+}
