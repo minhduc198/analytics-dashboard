@@ -18,7 +18,10 @@ export default function CustomBreadcrumb({ paths }: Props) {
         {paths.map((item, idx) => {
           return (
             <>
-              <BreadcrumbItem className="text-sm text-gray-500 dark:text-gray-400">
+              <BreadcrumbItem
+                key={item.href}
+                className="text-sm text-gray-500 dark:text-gray-400"
+              >
                 <BreadcrumbLink
                   href={item.href}
                   className={cn(idx === paths.length - 1 && 'text-black!')}

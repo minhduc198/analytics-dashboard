@@ -27,7 +27,7 @@ export default function CustomDialog({
   return (
     <Dialog open={isOpenDialog} onOpenChange={handleOpenDialog}>
       <DialogContent
-        className="sm:max-w-md max-w-[350px] lg:max-w-[700px]! p-6! lg:p-11! rounded-3xl gap-0!"
+        className=" max-w-[350px] lg:max-w-[700px] lg:p-11! rounded-3xl"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <DialogHeader>
