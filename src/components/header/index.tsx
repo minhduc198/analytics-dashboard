@@ -9,7 +9,12 @@ import {
 import { Input } from '@/components/ui/input'
 import { NOTIFICATIONS, USER_INFO } from '@/data'
 import { useSidebarControl } from '@/hooks/use-sidebar-control'
+import { cn } from '@/lib/utils'
 import { useTheme } from '@/theme/theme-provider'
+import {
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
+} from '@radix-ui/react-dropdown-menu'
 import {
   Bell,
   ChevronDown,
@@ -25,15 +30,11 @@ import {
 import { useEffect, useRef, useState } from 'react'
 import Notification from '../notification'
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover'
-import {
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
-} from '@radix-ui/react-dropdown-menu'
-import { Link } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { path } from '@/routers/path'
-import { cn } from '@/lib/utils'
 
 export default function Header() {
+  const navigate = useNavigate()
   const [isOpenNotification, setIsOpenNotification] = useState(false)
   const [isOpenProfile, setIsOpenProfile] = useState(false)
   const [openMenu, setOpenMenu] = useState(false)
@@ -81,6 +82,11 @@ export default function Header() {
 
   const toggleMenu = () => {
     setOpenMenu(!openMenu)
+  }
+
+  const handleToPageProfile = () => {
+    navigate(path.profile)
+    setOpenMenu(false)
   }
 
   return (
@@ -175,7 +181,7 @@ export default function Header() {
               </Button>
             </PopoverTrigger>
 
-            <PopoverContent className="shadow-theme-lg dark:bg-gray-dark absolute -right-[240px] mt-[12px] flex h-[480px] w-[350px] flex-col rounded-2xl border border-gray-200 bg-white p-3 sm:w-[361px] lg:right-0 dark:border-gray-800">
+            <PopoverContent className="shadow-theme-lg dark:bg-gray-dark absolute mt-[12px] flex h-[480px] w-[350px] flex-col rounded-2xl border border-gray-200 bg-white p-3 sm:w-[361px] -right-[260px] xl:right-0 dark:border-gray-800">
               <Notification
                 listData={NOTIFICATIONS.slice(0, 8)}
                 handleClose={handleClose}
@@ -213,9 +219,9 @@ export default function Header() {
 
             <div className="group mt-4 text-sm flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
               <CircleUser size={24} />
-              <Link to={path.profile}>
+              <div onClick={handleToPageProfile}>
                 <DropdownMenuItem>Edit profile</DropdownMenuItem>
-              </Link>
+              </div>
             </div>
             <div className="group text-sm flex items-center gap-3 rounded-lg px-3 py-2 font-medium text-gray-700 hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-white/5 dark:hover:text-gray-300">
               <Settings size={24} />

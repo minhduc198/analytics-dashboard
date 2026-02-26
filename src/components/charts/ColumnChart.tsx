@@ -15,6 +15,8 @@ const ColumnChart = ({ series, categories }: Props) => {
       toolbar: {
         show: false,
       },
+      redrawOnWindowResize: true,
+      redrawOnParentResize: true,
     },
     plotOptions: {
       bar: {
@@ -52,13 +54,19 @@ const ColumnChart = ({ series, categories }: Props) => {
   }
 
   return (
-    <div id="chart">
-      <ReactApexChart
-        options={options}
-        series={series}
-        type="bar"
-        height={180}
-      />
+    <div className="w-full overflow-x-auto">
+      <div
+        id="chart"
+        className="w-[600px] md:w-[800px] lg:w-[1200px] xl:w-full"
+      >
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="bar"
+          width="100%"
+          height={180}
+        />
+      </div>
     </div>
   )
 }

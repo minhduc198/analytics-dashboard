@@ -131,12 +131,20 @@ const StatisticsSplineChart = ({ series, categories }: Props) => {
   }
 
   return (
-    <ReactApexChart
-      options={options}
-      series={series}
-      type="area"
-      height={350}
-    />
+    <div className="w-full overflow-x-auto">
+      <div
+        id="chart"
+        className="min-w-[600px] md:min-w-[1000px] lg:min-w-[1200px]"
+      >
+        <ReactApexChart
+          options={options}
+          series={series}
+          type="area"
+          width="100%"
+          height={350}
+        />
+      </div>
+    </div>
   )
 }
 

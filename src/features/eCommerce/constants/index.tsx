@@ -56,13 +56,13 @@ export const columnHeader: ColumnHeader<RecentOrder>[] = [
     id: 'productName',
     label: 'Product',
     cellRender: (row) => (
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 w-[200px]">
         <img
           src={row.productImg}
           alt={row.productName}
           className="w-[50px] h-[50px] rounded-lg object-cover"
         />
-        <div>
+        <div className="whitespace-nowrap text-ellipsis overflow-hidden">
           <p className="font-semibold text-sm text-gray-800 dark:text-white/90">
             {row.productName}
           </p>

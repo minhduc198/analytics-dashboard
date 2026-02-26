@@ -6,6 +6,8 @@ const RadialChart = () => {
   const options: ApexOptions = {
     chart: {
       type: 'radialBar',
+      redrawOnWindowResize: true,
+      redrawOnParentResize: true,
     },
     plotOptions: {
       radialBar: {
@@ -27,6 +29,46 @@ const RadialChart = () => {
       },
     },
 
+    responsive: [
+      {
+        breakpoint: 576,
+        options: {
+          plotOptions: {
+            radialBar: {
+              track: {
+                margin: 32,
+              },
+
+              dataLabels: {
+                value: {
+                  fontSize: '24px',
+                },
+              },
+            },
+          },
+        },
+      },
+      {
+        breakpoint: 375,
+        options: {
+          plotOptions: {
+            radialBar: {
+              track: {
+                margin: 24,
+              },
+
+              dataLabels: {
+                value: {
+                  offsetY: -40,
+                  fontSize: '18px',
+                },
+              },
+            },
+          },
+        },
+      },
+    ],
+
     grid: {
       padding: {
         top: -40,
@@ -44,19 +86,17 @@ const RadialChart = () => {
   }
 
   return (
-    <div className="relative">
-      <div id="chart">
+    <div className="w-full flex justify-center">
+      <div id="chart" className="w-[420px]">
         <ReactApexChart
           options={options}
           series={series}
           type="radialBar"
-          height={450}
+          width="100%"
+          height={420}
         />
       </div>
       <div id="html-dist"></div>
-      <div className="absolute left-1/2 top-[170px] -translate-x-1/2 -translate-y-[85%] rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-600 dark:bg-green-500/15 dark:text-green-500">
-        +10%
-      </div>
     </div>
   )
 }

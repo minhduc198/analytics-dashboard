@@ -81,9 +81,9 @@ export default function ECommerce() {
             <ColumnChart series={seriesCol} categories={categories} />
           </div>
         </div>
-        <div className="col-span-12 space-y-6 xl:col-span-5">
+        <div className="col-span-12 space-y-6 xl:col-span-5 ">
           <div className="rounded-2xl border border-gray-200 bg-gray-100 dark:border-gray-800 dark:bg-white/3">
-            <div className="shadow-default rounded-2xl bg-white px-5 pb-11 pt-5 dark:bg-gray-900 sm:px-6 sm:pt-6">
+            <div className="shadow-default rounded-2xl bg-white px-5 pb-8 pt-5 dark:bg-gray-900 sm:px-6 sm:pt-6">
               <div className="flex justify-between">
                 <div>
                   <h3 className="text-lg font-semibold text-gray-800 dark:text-white/90">
@@ -96,8 +96,13 @@ export default function ECommerce() {
                 <EllipsisVertical size={24} />
               </div>
 
-              <RadialChart />
-              <p className="mx-auto mt-[-120px] mb-[-14px] w-full max-w-[380px] text-center text-sm text-gray-500 sm:text-base">
+              <div className="relative max-h-[195px]">
+                <RadialChart />
+                <div className="absolute left-1/2 top-[85%] -translate-x-1/2 -translate-y-[85%] rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-600 dark:bg-green-500/15 dark:text-green-500">
+                  +10%
+                </div>
+              </div>
+              <p className="mx-auto mt-1.5 w-full max-w-[380px] text-center text-sm text-gray-500 sm:text-base">
                 You earn $3287 today, it's higher than last month. Keep up your
                 good work!
               </p>
@@ -152,7 +157,7 @@ export default function ECommerce() {
                 Target you’ve set for each month
               </p>
             </div>
-            <div className="flex gap-2">
+            <div className="flex flex-col sm:flex-row gap-2">
               <div className="inline-flex w-fit items-center gap-0.5 rounded-lg bg-gray-100 p-0.5 dark:bg-gray-900">
                 {tabLineChart.map((tab) => (
                   <div

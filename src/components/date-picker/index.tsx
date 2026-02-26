@@ -20,7 +20,7 @@ export function DatePicker() {
   })
 
   return (
-    <Field className="mx-auto w-full h-9 text-gray-900 text-sm">
+    <Field className="mx-auto w-fit h-9 text-gray-900 text-sm">
       <Popover>
         <PopoverTrigger asChild>
           <Button
@@ -42,7 +42,7 @@ export function DatePicker() {
             )}
           </Button>
         </PopoverTrigger>
-        <PopoverContent className="w-auto mr-12 mt-2 p-0!" align="start">
+        <PopoverContent className="w-auto mr-12 mt-2 p-0! " align="start">
           <Calendar
             mode="range"
             defaultMonth={date?.from}
@@ -50,9 +50,18 @@ export function DatePicker() {
             onSelect={setDate}
             numberOfMonths={1}
             className="w-[348px] h-[374px] p-5"
+            classNames={{
+              caption_label: 'text-xl font-semibold ',
+              button_previous:
+                'h-9 w-9 text-lg rounded-md hover:bg-gray-100 flex justify-center items-center',
+              button_next:
+                'h-9 w-9 text-lg rounded-md hover:bg-gray-100 flex justify-center items-center',
+            }}
             modifiersClassNames={{
-              range_start: 'bg-blue-600 text-white !rounded-l-full',
-              range_end: 'bg-blue-600 text-white !rounded-r-full',
+              range_start:
+                'bg-blue-600 text-white! rounded-l-full overflow-hidden',
+              range_end:
+                'bg-blue-600 text-white! rounded-r-full overflow-hidden',
               range_middle: 'font-semibold',
             }}
           />

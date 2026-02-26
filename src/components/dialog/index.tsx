@@ -27,14 +27,14 @@ export default function CustomDialog({
   return (
     <Dialog open={isOpenDialog} onOpenChange={handleOpenDialog}>
       <DialogContent
-        className="sm:max-w-md max-w-[700px]! p-11! rounded-3xl gap-0!"
+        className="sm:max-w-md max-w-[350px] lg:max-w-[700px]! p-6! lg:p-11! rounded-3xl gap-0!"
         onOpenAutoFocus={(e) => e.preventDefault()}
       >
         <DialogHeader>
-          <DialogTitle className="mb-2 text-2xl font-semibold text-gray-800 dark:text-white/90">
+          <DialogTitle className="mb-2 text-lg lg:text-2xl font-semibold text-gray-800 dark:text-white/90">
             {dialogTitle}
           </DialogTitle>
-          <DialogDescription className="mb-6 text-sm text-gray-500 dark:text-gray-400 lg:mb-7">
+          <DialogDescription className="mb-6 text-xs text-gray-500 dark:text-gray-400 lg:mb-7">
             {dialogDesc}
           </DialogDescription>
         </DialogHeader>
