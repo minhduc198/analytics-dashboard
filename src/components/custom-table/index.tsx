@@ -11,12 +11,12 @@ import {
 
 interface Props<T> {
   tableTitle: string
-  columnHeader: ColumnHeader<T>[]
+  columnHeaderECommerce: ColumnHeader<T>[]
   columnData: T[]
 }
 export default function CustomTable<T extends { id: number | string }>({
   tableTitle,
-  columnHeader,
+  columnHeaderECommerce,
   columnData,
 }: Props<T>) {
   return (
@@ -77,7 +77,7 @@ export default function CustomTable<T extends { id: number | string }>({
       <Table>
         <TableHeader>
           <TableRow className="font-medium text-xs text-gray-500 dark:text-gray-400">
-            {columnHeader.map((col) => (
+            {columnHeaderECommerce.map((col) => (
               <TableHead key={String(col.id)}>{col.label}</TableHead>
             ))}
           </TableRow>
@@ -85,8 +85,8 @@ export default function CustomTable<T extends { id: number | string }>({
         <TableBody>
           {columnData.map((item) => (
             <TableRow key={item.id}>
-              {columnHeader.map((col) => (
-                <TableCell key={String(col.id)}>
+              {columnHeaderECommerce.map((col) => (
+                <TableCell className="py-3" key={String(col.id)}>
                   {col.cellRender
                     ? col.cellRender(item)
                     : (item[col.id] as React.ReactNode)}

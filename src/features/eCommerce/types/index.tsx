@@ -1,6 +1,6 @@
 export type OrderStatus = 'Pending' | 'Delivered' | 'Canceled'
 
-export interface RecentOrder {
+export interface RecentOrderECommerce {
   id: number
   productImg: string
   productName: string

@@ -2,10 +2,10 @@ import App from '@/App'
 import { Layout } from '@/layouts'
 import { createBrowserRouter, Navigate, Outlet } from 'react-router-dom'
 import { path } from './path'
-import ECommerce from '@/features/eCommerce'
+import ECommerce from '@/features/ecommerce'
 import Analytics from '@/features/analytics'
 import Marketing from '@/features/marketing'
-import TextGenerator from '@/features/textGenerator'
+import TextGenerator from '@/features/textgenerator'
 import Profile from '@/features/profile'
 
 function ProtectedRoute() {

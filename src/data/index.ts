@@ -1,4 +1,4 @@
-import type { RecentOrder } from '@/features/eCommerce/types'
+import type { RecentOrderECommerce } from '@/features/ecommerce/types'
 import type { INotification } from '@/types'
 
 export const NOTIFICATIONS: INotification[] = [
@@ -238,7 +238,7 @@ export const USER_INFO = {
   country: 'United States',
 }
 
-export const RECENT_ORDER: RecentOrder[] = [
+export const RECENT_ORDER: RecentOrderECommerce[] = [
   {
     id: 1,
     productImg: 'https://images.unsplash.com/photo-1517336714731-489689fd1ca8',

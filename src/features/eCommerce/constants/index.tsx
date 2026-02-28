@@ -1,5 +1,5 @@
 import type { ColumnHeader } from '@/types'
-import type { RecentOrder } from '../types'
+import type { RecentOrderECommerce } from '../types'
 
 export const seriesCol = [
   {
@@ -23,17 +23,6 @@ export const categories = [
   'Dec',
 ]
 
-export const series = [
-  {
-    name: 'Sales',
-    data: [180, 190, 170, 160, 175, 165, 170, 205, 230, 210, 240, 235],
-  },
-  {
-    name: 'Revenue',
-    data: [40, 30, 50, 40, 55, 40, 70, 100, 110, 120, 150, 140],
-  },
-]
-
 export const tabLineChart = [
   {
     id: 'overview',
@@ -51,7 +40,7 @@ export const tabLineChart = [
   },
 ]
 
-export const columnHeader: ColumnHeader<RecentOrder>[] = [
+export const columnHeaderECommerce: ColumnHeader<RecentOrderECommerce>[] = [
   {
     id: 'productName',
     label: 'Product',

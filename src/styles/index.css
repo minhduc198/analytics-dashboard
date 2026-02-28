@@ -193,21 +193,21 @@ ol {
     cursor: pointer;
   }
 
-  .custom-scrollbar {
+  body {
     scrollbar-width: thin;
     scrollbar-color: #e4e7ec transparent;
   }
 
-  .custom-scrollbar::-webkit-scrollbar {
+  body::-webkit-scrollbar {
     width: 4px;
     height: 4px;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track {
     background: transparent;
   }
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb {
     background-color: #e4e7ec;
     border-radius: 100%;
   }

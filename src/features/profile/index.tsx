@@ -237,7 +237,7 @@ export default function Profile() {
             isOpenDialog={isOpenDialog}
             handleOpenDialog={handleOpenDialog}
             dialogContent={
-              <div className="custom-scrollbar h-[450px] overflow-y-auto pl-2 pr-4">
+              <div className="h-[450px] overflow-y-auto pl-2 pr-4">
                 <div>
                   <h5 className="mb-5 text-lg font-medium text-gray-800 dark:text-white/90 lg:mb-6">
                     Social Links

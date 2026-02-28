@@ -1,21 +1,20 @@
-import RangeAreaChart from '@/components/charts/AreaChart'
 import ColumnChart from '@/components/charts/ColumnChart'
 import Demographic from '@/components/charts/Demographic'
 import RadialChart from '@/components/charts/RadiaChart'
 import CustomTable from '@/components/custom-table'
 import { DatePicker } from '@/components/date-picker'
 import { RECENT_ORDER } from '@/data'
+import AreaStatisticsChart from '@/features/ecommerce/AreaStatisticsChart'
 import { cn } from '@/lib/utils'
 import { ArrowDown, ArrowUp, Box, EllipsisVertical, Users } from 'lucide-react'
 import { useState } from 'react'
 import {
   categories,
-  columnHeader,
-  series,
+  columnHeaderECommerce,
   seriesCol,
   tabLineChart,
 } from './constants'
-import type { RecentOrder } from './types'
+import type { RecentOrderECommerce } from './types'
 
 export default function ECommerce() {
   const [activeTab, setActiveTab] = useState('overview')
@@ -96,7 +95,7 @@ export default function ECommerce() {
                 <EllipsisVertical size={24} />
               </div>
 
-              <div className="relative max-h-[195px]">
+              <div className="relative max-h-[195px] mt-5 sm:mt-0">
                 <RadialChart />
                 <div className="absolute left-1/2 top-[85%] -translate-x-1/2 -translate-y-[85%] rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-600 dark:bg-green-500/15 dark:text-green-500">
                   +10%
@@ -145,7 +144,6 @@ export default function ECommerce() {
           </div>
         </div>
       </div>
-
       <div className="mt-6 grid grid-cols-12 gap-4 md:gap-6 ">
         <div className="col-span-12 w-full overflow-hidden rounded-2xl border border-gray-200 bg-white p-5  sm:px-6 sm:pt-6 dark:border-gray-800 dark:bg-white/3">
           <div className="justify-between items-center mb-6 flex flex-col gap-5 sm:flex-row sm:justify-between">
@@ -179,17 +177,17 @@ export default function ECommerce() {
               <DatePicker />
             </div>
           </div>
-          <RangeAreaChart series={series} categories={categories} />
+          <AreaStatisticsChart />
         </div>
       </div>
-
+      x
       <div className="flex flex-col md:grid md:grid-cols-12 gap-4 md:gap-6 mt-6 items-start">
         <Demographic />
         <div className="w-full md:col-span-7">
-          <CustomTable<RecentOrder>
+          <CustomTable<RecentOrderECommerce>
             tableTitle="Recent Order"
             columnData={RECENT_ORDER}
-            columnHeader={columnHeader}
+            columnHeaderECommerce={columnHeaderECommerce}
           />
         </div>
       </div>

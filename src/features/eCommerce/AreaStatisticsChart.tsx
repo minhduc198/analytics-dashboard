@@ -1,12 +1,32 @@
-import type { ISeries } from '@/types'
 import type { ApexOptions } from 'apexcharts'
 import ReactApexChart from 'react-apexcharts'
 
-interface Props {
-  categories: string[]
-  series: ISeries[]
-}
-const StatisticsSplineChart = ({ series, categories }: Props) => {
+export const categories = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec',
+]
+
+export const series = [
+  {
+    name: 'Sales',
+    data: [180, 190, 170, 160, 175, 165, 170, 205, 230, 210, 240, 235],
+  },
+  {
+    name: 'Revenue',
+    data: [40, 30, 50, 40, 55, 40, 70, 100, 110, 120, 150, 140],
+  },
+]
+const AreaStatisticsChart = () => {
   const options: ApexOptions = {
     chart: {
       type: 'area',
@@ -148,4 +168,4 @@ const StatisticsSplineChart = ({ series, categories }: Props) => {
   )
 }
 
-export default StatisticsSplineChart
+export default AreaStatisticsChart
